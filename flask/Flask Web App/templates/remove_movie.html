@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Remove Movie{% endblock %}
+
+{% block content %}
+    <h1>Remove Movie</h1>
+    Question: {{ movie.movie }} <br>
+    Answer:   {{ movie.director }}
+
+    <h2>Are you sure?</h2>
+    <form method="post">
+        <button type="submit">Yes</button>
+        <a href="{{ url_for('welcome') }}">No</a>
+    </form>
+{% endblock %}

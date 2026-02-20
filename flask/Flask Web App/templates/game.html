@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}View game{% endblock %}
+
+{% block content %}
+    <a href="{{ url_for('welcome') }}">
+        Home
+    </a>
+
+    <h1>Game</h1>
+   <strong> Game:</strong> {{ game.game }} <br>
+    <strong>Console:</strong>    {{ game.console }}
+    <strong>Started:</strong>    {{ game.started }}
+   
+
+    <a href="{{ url_for('remove_game', id=game.id) }}">Remove this game</a>
+{% endblock %}

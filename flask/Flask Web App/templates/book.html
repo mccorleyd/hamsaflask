@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}View book{% endblock %}
+
+{% block content %}
+    <a href="{{ url_for('welcome') }}">
+        Home
+    </a>
+
+    <h1>Book</h1>
+   <strong>Book:</strong> {{ book.book }} <br>
+    <strong>Author:</strong>    {{ book.author }}
+    <strong>Started:</strong>    {{ book.started }}
+   
+    <br>
+    <a href="{{ url_for('remove_book', id=book.id) }}">Remove this book</a>
+{% endblock %}

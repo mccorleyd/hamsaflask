@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Add a new game{% endblock %}
+
+{% block content %}
+  <h1>Add a new game</h1>
+  <form method="post">
+    {{ form.hidden_tag() }}
+    <p>
+      Games:
+      <input type="text" name="game">
+    </p>
+    <p>
+      Console:
+      <input type="text" name="console">
+    </p>
+
+<label>{{ form.started.label }} {{ form.started() }}</label>
+  <br>
+    <button type="submit">Create</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+    <h1>Welcome to my Entertainment Backlog</h1>
+
+    <h2>Game Backlog:</h2>
+
+<table border="1">
+  <tr>
+    <th>Game</th>
+    <th>Console</th>
+    <th>Link</th>
+    <th>Started</th>
+  </tr>
+
+  {% for game in games %}
+  <tr>
+    <td>{{ game.game }}</td>
+    <td>{{ game.console }}</td>
+    <td>                <a href="{{ url_for('game_view', id=game.id) }}">
+                    {{ game.game }}
+                </a></td>
+    <td>{{ game.started }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<br>
+
+ <a href="{{ url_for('add_game') }}">Add Game</a>
+
+<h2>Movies Backlog:</h2>
+
+<table border="1">
+  <tr>
+    <th>Movie</th>
+    <th>Director</th>
+    <th>Link</th>
+    <th>Watched</th>
+  </tr>
+
+  {% for movie in movies %}
+  <tr>
+    <td>{{ movie.movie }}</td>
+    <td>{{ movie.director }}</td>
+     <td>                <a href="{{ url_for('movie_view', id=movie.id) }}">
+                    {{ movie.movie }}
+                </a></td>
+    <td>{{ movie.watched }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<br>
+    <a href="{{ url_for('add_movie') }}">Add Movie</a>
+
+<h3>Book Backlog:</h3>
+
+<table border="1">
+  <tr>
+    <th>Book</th>
+    <th>Author</th>
+    <th>Link</th>
+    <th>Started</th>
+  </tr>
+
+  {% for book in books %}
+  <tr>
+    <td>{{ book.book }}</td>
+    <td>{{ book.author }}</td>
+     <td>                <a href="{{ url_for('book_view', id=book.id) }}">
+                    {{ book.book }}
+                </a></td>
+    <td>{{ book.started }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<br>
+    <a href="{{ url_for('add_book') }}">Add Book</a>
+
+
+
+
+
+
+{% endblock %}
